@@ -4,7 +4,6 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity implements SensorEventListener
 {   
     private MyGLSurfaceView view;
-    private MyRenderer renderer;
     private SensorManager sensorManager;
     private Sensor sensor;
 
@@ -15,8 +14,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         view = MyGLSurfaceView(getApplicationContext());
         setContentView(view);
-        renderer = new MyRenderer();
-        view.setRenderer(renderer);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);

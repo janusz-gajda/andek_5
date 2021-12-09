@@ -9,7 +9,8 @@ public class MyGLSurfaceView extends GLSurfaceView
     public MyGLSurfaceView(Context context)
     {
         super(context);
-        setRenderer(new MyRenderer(););
+        renderer = new MyRenderer();
+        setRenderer(renderer);
     }
     public void updateXOffset(float newVal){
         renderer.updateXOffset(newVal);
